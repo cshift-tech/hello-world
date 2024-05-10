@@ -13,4 +13,4 @@ jobs:
   security:
     uses: cshift-tech/public-actions/.github/workflows/ts-app-security.yml@main
     with:
-      image-tag: ${{ env.IMAGE_TAG }}
+      image-tag: $IMAGE_TAG
