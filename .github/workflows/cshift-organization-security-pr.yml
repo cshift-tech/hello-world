@@ -1,0 +1,9 @@
+name: CShift Organization Security
+
+on:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  dependency-review:
+    uses: cshift-tech/public-actions/.github/workflows/dependency-review.yml@main
