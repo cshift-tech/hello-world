@@ -9,3 +9,5 @@ on:
 jobs:
   security:
     uses: cshift-tech/public-actions/.github/workflows/ts-app-security.yml@main
+  dependency-review:
+    uses: cshift-tech/public-actions/.github/workflows/dependency-review.yml@main
