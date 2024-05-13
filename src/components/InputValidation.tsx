@@ -2,10 +2,11 @@ import { useEffect, useRef, useState } from "react";
 
 const InputValidation = () => {
   const divRef = useRef<HTMLDivElement | null>(null);
+  const inputRef = useRef<HTMLInputElement | null>(null);
   const blog = `<h3>Injektion</h3><u>Här kan det finnas jobbiga skript.<u>`;
   const [validationMessage, setValidationMessage] = useState<string>("");
   const validateMessage = async () => {
-    setValidationMessage("Invalid code");
+    setValidationMessage(`Invalid code: ${inputRef.current?.value}`);
   };
   useEffect(() => {
     if (divRef?.current) {
@@ -14,9 +15,9 @@ const InputValidation = () => {
   }, []);
   return (
     <div>
-      <input placeholder="Enter your code" />
+      <input name="code" ref={inputRef} placeholder="Enter your code" />
       <button onClick={validateMessage}>Submit</button>
-      <div>{validationMessage}</div>
+      <div dangerouslySetInnerHTML={{ __html: validationMessage }} />
 
       <div dangerouslySetInnerHTML={{ __html: blog }} />
 
