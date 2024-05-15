@@ -16,7 +16,7 @@ COPY . .
 RUN npm run build
 
 # Stage 2: Production Stage
-FROM nginx:alpine-slim
+FROM nginx:stable-bookworm
 
 # Copy built files from the build stage to the production image
 COPY --from=build /app/build /usr/share/nginx/html
