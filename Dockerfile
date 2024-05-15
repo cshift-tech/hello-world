@@ -15,7 +15,7 @@ COPY . .
 # Build the application
 RUN npm run build
 
-# Stage 2: Production Stage
+# Stage 2: Production Stage.
 FROM nginx:stable-bookworm
 
 # Copy built files from the build stage to the production image
